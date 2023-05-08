@@ -4,22 +4,21 @@
 
 ### Purpose
 
-The purpose of a DID Method Namespace Specification is to define the following:
+The purpose of a Decentralized Identifier (DID) Method Namespace Specification is to define the following:
 - DID Identifier Syntax and Construction
 - DID Identifier Query Operators
 - DID Document CRUD Abstract Interface(s)
 - DID Method Platform Implementation Guidance
 
-The Web 7.0 Decentralized Identifier Method Namespace Specification 
-("Web7" DID Method Namespace Specification) 
-defines the end-to-end lifecycle of DID Identifiers and DID Documents for the Web 7.0 ecosystem.
+The Web 7.0 Decentralized Identifier Method Namespace Specification ("Web7" DID Method Namespace Specification) 
+defines the end-to-end lifecycle of DID Identifiers and DID Documents for use in the Web 7.0 ecosystem.
 
 Web 7.0 is a secure, message-based, decentralized operating system that underpins a unified software and hardware ecosystem for building resilient, trusted, decentralized systems using decentralized identifiers, DIDComm agents, and verifiable credentials.
 
 The Web 7.0 Foundation, a federally-incorporated Canadian non-profit organization, is chartered to support, promote, protect, and curate the Web 7.0 ecosystem: operating system software, standards, and specifications; as well as other software and technology projects.
 
 This specification defines the following:
-- "Web7" Identifier Syntax and Construction
+- "Web7" Decentralized Identifier Syntax and Construction
 - "Web7" DID Document CRUD Abstract Interface
 
 This specification also provides Platform Implementation Guidance to assist Implementors in creating safe and secure Web 7.0 apps, agents, services and platforms that are compliant with the "Web7" DID Method Namespace Specification.
@@ -38,7 +37,7 @@ verifiable credentials, and secure storage may also be interested in reading thi
 
 ### Terminology
 
-- The term "Web7" Identifier is synonymous with the term "Web7" Decentralized Identifier. 
+- The term "Web7" Decentralized Identifier is synonymous with the term "Web7" Decentralized Identifier. 
 - The term "Web7" DID Document is synonymous with the term "Web7" Decentralized Identifier Document.
 - The term "Web7" DID Method Namespace Specification is synonymous with the terms "Web7" Decentralized Identifier Method Namespace Specification and "Web7" DID Method Namespace Specification.
 - A compliant "Web7" runtime library is a software library that, in part, implements the "Web7" DID Document CRUD Abstract Interface in a way that complies with the "Web7" DID Method Namespace Specification.
@@ -51,37 +50,32 @@ published by the W3C Decentralized Identifier Working Group.
 
 ### Authoritative Source Text
 
-The authoriative source text for this specifcation can be found here: https://github.com/mwherman2000/TrustedDigitalWeb/blob/master/specifications/did-methods/did-mesh-1-0-1.md.
+The authoriative source text for this specifcation can be found here: https://github.com/Web7Foundation/Specifications/blob/main/methods/did-web7-1-0-1.md.
 
 
-## 2. "Web7" Identifier Method Name
+## 2. "Web7" Decentralized Identifier Method Name
 
-The name string that shall identify the "Web7" Identifier Method is: `mesh`.
+The name string that shall identify the "Web7" Decentralized Identifier Method is: `web7`.
 
-A DID Identifier that uses this method **MUST** begin with the following prefix: `did:mesh`. 
+A DID Identifier that uses this method **MUST** begin with the following prefix: `did:web7`. 
 Per the DID Decentralized Identifier specification[2], the value of this string **MUST** be in lowercase.
 
-## 3. "Web7" Identifier Format
+## 3. "Web7" Decentralized Identifier Format
 
-"Web7" Identifiers **MUST** use the following format:
+"Web7" Decentralized Identifiers **MUST** use the following format:
 ```
-did-mesh-did               = "did:mesh:" id-string
+did-web7-did               = "did:web7:" id-string
 id-string                  = 1* idchar
-idchar                     = 1-9 / A-H / J-N / P-Z / a-k / m-z 
+idchar                     = 0-9 
 ```
-`id-string` is an encoded public key value computed using KERI key management techniques[V2.1][36][37][38].
-The KERI seed value can be any globally unique value including, for example, 
-a composite database record key, mesh key, or GUID value. 
-"Web7" Identifier `id-string` values are encoded using the KERI `Base64` encoding method.
+`id-string` is an integer value in the range 0..32767, inclusive.
 
-`idchar` consists of all the characters in the KERI `Base64` character set. 
-
-NOTE: In the following examples, `BF5pxRJP6THrUtlDdhh07hJEDKrJxkcR9m5u1xs33bhp` is an example KERI-based `Base64` id-string`; 
-a placeholder `id-string` value.
-
-### Example 1. "Web7" Interfaces Definition Identifier
+### Example 1. "Web7" Decentralized Identifiers
 ```
-did:mesh:BF5pxRJP6THrUtlDdhh07hJEDKrJxkcR9m5u1xs33bhp
+did:web7:0
+did:web7:1
+did:web7:2
+did:web7:3
 ```
 
 ### 3.1 DID Identifier Query Operators
@@ -90,26 +84,26 @@ This DID Method does not define or support any query operators.
 
 ## 4. CRUD Abstract Interface
  
-The "Web7" library implements CRUD interfaces for controlling the lifecycle of a "Web7" Identifier and its associated DID Document that are compliant with this specification.
+The "Web7" library implements CRUD interfaces for controlling the lifecycle of a "Web7" Decentralized Identifier and its associated DID Document that are compliant with this specification.
  
 ### 4.1 Create (Register)
 
-To create a "Web7" Identifier, a program invokes the `RegIdWithPublicKey` function from a compliant "Web7" runtime library. 
-The interface to register a "Web7" Identifier and its associated public key is defined as follows:
+To create a "Web7" Decentralized Identifier, a program invokes the `RegIdWithPublicKey` function from a compliant "Web7" runtime library. 
+The interface to register a "Web7" Decentralized Identifier and its associated public key is defined as follows:
 ```csharp
 public bool RegIdWIthPublicKey(string didobjectid, byte[] publicKey); 
 ```
-The calling program must include two parameters: the string value of the new "Web7" Identifier to be registered and 
+The calling program must include two parameters: the string value of the new "Web7" Decentralized Identifier to be registered and 
 a cryptographic public key to act as the first management key. 
-This function will return `True` if the "Web7" Identifier had not been registered previously.
+This function will return `True` if the "Web7" Decentralized Identifier had not been registered previously.
 
 ### 4.2 Read (Resolve)
 
-"Web7" Identifier's associated DID Document can be looked up by invoking the `GetDIDDocument` function from a compliant "Web7" runtime library. 
+"Web7" Decentralized Identifier's associated DID Document can be looked up by invoking the `GetDIDDocument` function from a compliant "Web7" runtime library. 
 To make sure the result returned by invoking the `GetDIDDocument` function is trustworthy, the client could ask a sufficient number of nodes 
 and compare each node's return value.
 
-The interface for resolving a "Web7" Identifier and return its associated DID Document is defined as follows:
+The interface for resolving a "Web7" Decentralized Identifier and return its associated DID Document is defined as follows:
 ```csharp
 public DIDDocument GetDIDDocument(string didobjectid);
 ```
@@ -122,40 +116,36 @@ Note: The list of supported public key signature schemes is listed in [Appendix 
 
 ```json
 {
-    "id": "did:mesh:BF5pxRJP6THrUtlDdhh07hJEDKrJxkcR9m5u1xs33bhp",
+    "id": "did:web7:0",
     "verificationMethod": [
         {
-            "id": "did:mesh:BF5pxRJP6THrUtlDdhh07hJEDKrJxkcR9m5u1xs33bhp#key-1",
+            "id": "did:web7:0#key-1",
             "type": "Ed25519VerificationKey2020",
-            "controller": "did:mesh:controller",
+            "controller": "did:web7:0",
             "publicKeyMultibase": "zEY59y7px76e2yv5FMj9fYcjDsqk8yus6isWtkF69ZrHY"
         }
     ],
-    "authentication": ["did:mesh:BF5pxRJP6THrUtlDdhh07hJEDKrJxkcR9m5u1xs33bhp#key-1"],
-    "assertionMethod": ["did:mesh:BF5pxRJP6THrUtlDdhh07hJEDKrJxkcR9m5u1xs33bhp#key-1"],
+    "authentication": ["did:web7:0#key-1"],
+    "assertionMethod": ["did:web7:0#key-1"],
     "service": [{
-        "id":"#nodeagent1",
-        "type": "Web7Node", 
-        "serviceEndpoint": "https://didnodes.example.com/nodeagent1"
+        "id":"#default",
+        "type": "method", 
+        "serviceEndpoint": "https://agents.example.com/agent0"
     },
-    {
-        "id":"#nodeagent2",
-        "type": "Web7Node", 
-        "serviceEndpoint": "https://didnodes.example.com/nodeagent2"
-    }]
+    ]
 }
 ```
 
 ### 4.3 Update (Replace)
 
-To update the DID Document associated with a "Web7" Identifier, two functions need to be invoked, 
+To update the DID Document associated with a "Web7" Decentralized Identifier, two functions need to be invoked, 
 ```csharp
 public bool AddKey(string didobjectid, byte[] newPublicKey, byte[] sender);
 ```
 ```csharp
 public bool RemoveKey(string didobjectid, byte[] oldPublicKey, byte[] sender);
 ```
-Note that `sender` param must be a currently-in-use public key of this "Web7" Identifier.
+Note that `sender` param must be a currently-in-use public key of this "Web7" Decentralized Identifier.
 If a public key is removed, then it **cannot** be added again.
 
 ### 4.4 Deactivate (Revoke)
@@ -163,7 +153,7 @@ If a public key is removed, then it **cannot** be added again.
 To delete or deactivate a "Web7", it suffices to remove all public keys from its associated 
 DID Document. In this case, there is no public key that can be used to authenticate the "Web7" Controller.
 
-More importantly, deletion of a "Web7" DID Document means that the associated "Web7" Identifier cannot be reactivated again. 
+More importantly, deletion of a "Web7" DID Document means that the associated "Web7" Decentralized Identifier cannot be reactivated again. 
 
 ## 5. Implementation Guidance
 
@@ -195,7 +185,7 @@ Lastly, the following list of best-in-class DID Method Namespace Specifications 
 
 There are no privacy considerations that are specific to this DID Method Namespace Specification. Privacy considersations and requirements are the responsiblity of the particular platform Implementor - taking into consideration the types of Business Documents, Business Processes, DIDComm agents, and Application Objects processed by that platform.
 
-The syntax and construction of a "Web7" Identifier and its associated DID Document helps to ensure that no Personally Identifiable Information (PII) or other personal data is exposed by these constructs.
+The syntax and construction of a "Web7" Decentralized Identifier and its associated DID Document helps to ensure that no Personally Identifiable Information (PII) or other personal data is exposed by these constructs.
 
 Implementers need to be aware of the privacy implications of the underlying tools and technologies 
 used to develop DIDComm agents, services, and libraries that in turn, leverage the "Web7" Method Namespace Specification. 
@@ -215,13 +205,14 @@ Lastly, the following list of best-in-class DID Method Namespace Specifications 
 
 ## 6. Reference Implementations
 
-A version of the code for the "Web7" Identifier Method reference implementation can be found in the following GitHub project: https://github.com/mwherman2000/TrustedDigitalWeb. 
-This project is the definitive reference implementation of the "Web7" Identifier Method and contains compliant reference implementations of apps, DIDComm agents, and services.
+A version of the code for the "Web7" Decentralized Identifier Method reference implementation can be found in the following GitHub project: https://github.com/Web7Foundation/DnsServer. 
+This project is the definitive reference implementation of the "Web7" Decentralized Identifier Method and contains compliant reference implementations of 
+Web 7.0 apps, DIDComm agents, and services.
 
 ## 7. Acknowledgments
 
-The project is very gratefully to all the members of the 
-DID-CORE, Verifiable Credentials, and Confidential Storage working groups (hosted by W3C and DIF) for their, literally, years of support.
+The project is gratefully to all the members of the 
+DID-CORE, Verifiable Credentials, and Confidential Storage working groups (hosted by W3C and DIF) for their years of support.
 
 ## Appendix A. Public Key Algorithm
 
@@ -252,6 +243,8 @@ There is only one curve that can be used, namely, `ed25519`.
 ## References
 
 References and historical record of related publications.
+
+[0] Web 7.0 DIDComm Agent Architecture Reference Model (DIDComm-ARM) 0.40 (December 18, 2022), https://hyperonomy.com/2022/12/18/web-7-0-didcomm-agent-architecture-reference-model-didcomm-arm-0-40-december-18-2022/.
 
 [1] Trusted Digital Web: Whitepaper, https://hyperonomy.com/2019/11/06/trusted-digital-web-whitepaper/.
 
@@ -340,11 +333,6 @@ References and historical record of related publications.
 [43] Trinity Graph Engine GitHub repository, https://github.com/Microsoft/GraphEngine.
 
 [44] Object Linking and Embedding (OLE), https://en.wikipedia.org/wiki/Object_Linking_and_Embedding.
-
-## Video Streams
-
-[V2] SSIMeetup Webcasts, https://ssimeetup.org/
-   1. Key Event Receipt Infrastructure (KERI): A secure identifier overlay for the internet – Sam Smith – Webinar 58, https://ssimeetup.org/key-event-receipt-infrastructure-keri-secure-identifier-overlay-internet-sam-smith-webinar-58/.
 
 ## Epilogue
 

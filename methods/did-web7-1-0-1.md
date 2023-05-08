@@ -129,7 +129,7 @@ Note: The list of supported public key signature schemes is listed in [Appendix 
     "assertionMethod": ["did:web7:0#key-1"],
     "service": [{
         "id":"#default",
-        "type": "method", 
+        "type": "default", 
         "serviceEndpoint": "https://agents.example.com/agent0"
     },
     ]

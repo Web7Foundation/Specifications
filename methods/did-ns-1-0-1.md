@@ -1,16 +1,16 @@
-# Web 7.0 Decentralized Identifier Method Namespace Specification version 1.0.1
+# Web 7.0 Decentralized Identifier Name System (DIDNS) DID Method Specification version 1.0.1
 
 ## 1. Context
 
 ### Purpose
 
-The purpose of a Decentralized Identifier (DID) Method Namespace Specification is to define the following:
+The purpose of a DID Method Specification is to define the following:
 - DID Identifier Syntax and Construction
 - DID Identifier Query Operators
 - DID Document CRUD Abstract Interface(s)
 - DID Method Platform Implementation Guidance
 
-The Web 7.0 Decentralized Identifier Method Namespace Specification ("Web7" DID Method Namespace Specification) 
+The Web 7.0 Decentralized Identifier Name System (DIDNS) DID Method Specification (DIDNS DID Method Specification) 
 defines the end-to-end lifecycle of DID Identifiers and DID Documents for use in the Web 7.0 ecosystem.
 
 Web 7.0 is a secure, message-based, decentralized operating system that underpins a unified software and hardware ecosystem for building resilient, trusted, decentralized systems using decentralized identifiers, DIDComm agents, and verifiable credentials.
@@ -18,29 +18,29 @@ Web 7.0 is a secure, message-based, decentralized operating system that underpin
 The Web 7.0 Foundation, a federally-incorporated Canadian non-profit organization, is chartered to support, promote, protect, and curate the Web 7.0 ecosystem: operating system software, standards, and specifications; as well as other software and technology projects.
 
 This specification defines the following:
-- "Web7" Decentralized Identifier Syntax and Construction
-- "Web7" DID Document CRUD Abstract Interface
+- DIDNS Identifier Syntax and Construction
+- DIDNS Identifier DID Document CRUD Abstract Interface
 
-This specification also provides Platform Implementation Guidance to assist Implementors in creating safe and secure Web 7.0 apps, agents, services and platforms that are compliant with the "Web7" DID Method Namespace Specification.
+This specification also provides Platform Implementation Guidance to assist Implementors in creating safe and secure Web 7.0 apps, agents, services and platforms that are compliant with the DIDNS DID Method Specification.
 
 ### Out-of-Scope
 
 The following topics are out-of-scope:
-- Descriptions of any implementation-specific design, implementation, or deployment details for any particular software platform that might support the "Web7" DID Method Namespace.
+- Descriptions of any implementation-specific design, implementation, or deployment details for any particular software platform that might support the DIDNS DID Method Namespace.
 
 ### Intended Audience
 
-The primary audience for this DID Method Namespace Specification is Implementors of Web 7.0 apps, DIDComm agents, and services; including but not limited to: 
+The primary audience for this DID Method Specification is Implementors of Web 7.0 apps, DIDComm agents, and services; including but not limited to: 
 software architects, data modelers, application developers, services developers, testers, operators, and user experience (UX) specialists. 
 In addition, other people involved in a broad range of standards efforts related to decentralized identity,
 verifiable credentials, and secure storage may also be interested in reading this specification.
 
 ### Terminology
 
-- The term "Web7" Decentralized Identifier is synonymous with the term "Web7" Decentralized Identifier. 
-- The term "Web7" DID Document is synonymous with the term "Web7" Decentralized Identifier Document.
-- The term "Web7" DID Method Namespace Specification is synonymous with the terms "Web7" Decentralized Identifier Method Namespace Specification and "Web7" DID Method Namespace Specification.
-- A compliant "Web7" runtime library is a software library that, in part, implements the "Web7" DID Document CRUD Abstract Interface in a way that complies with the "Web7" DID Method Namespace Specification.
+- The term DIDNS Identifier is synonymous with the term DIDNS Decentralized Identifier. 
+- The term DIDNS Identifier DID Document is synonymous with the term DIDNS Decentralized Identifier Document.
+- The term DIDNS DID Method Specification is synonymous with the term DIDNS Decentralized Identifier Name System (DIDNS) DID Method Specification..
+- A compliant DIDNS runtime library is a software library that, in part, implements the DIDNS Identifier DID Document CRUD Abstract Interface in a way that complies with the DIDNS DID Method Specification.
 
 ### Conformance
 
@@ -50,83 +50,110 @@ published by the W3C Decentralized Identifier Working Group.
 
 ### Authoritative Source Text
 
-The authoriative source text for this specification can be found here: https://github.com/Web7Foundation/Specifications/blob/main/methods/did-web7-1-0-1.md.
+The authoriative source text for this specification can be found here: https://github.com/Web7Foundation/Specifications/blob/main/methods/did-ns-1-0-1.md.
 
+### Example 1. DIDNS Identifier Example
+```
+did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914
+did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc
+did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_didid
+did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_didkey
+```
 
-## 2. "Web7" Decentralized Identifier Method Name
+### Example 2. Anonymous DIDNS Identifier Example
+```
+did:ns:fe042e80-e963-4a35-9734-7d1eaeb1b06e
+did:ns:fe042e80-e963-4a35-9734-7d1eaeb1b06e:_diddoc
+did:ns:fe042e80-e963-4a35-9734-7d1eaeb1b06e:_didid
+did:ns:fe042e80-e963-4a35-9734-7d1eaeb1b06e:_didkey
+```
 
-The name string that shall identify the "Web7" Decentralized Identifier Method is: `web7`.
+## 2. Decentralized Identifier Name System (DIDNS) Name
 
-A DID Identifier that uses this method **MUST** begin with the following prefix: `did:web7`. 
+The name string that **MUST** be used o label a Decentralized Identifier Name System (DIDNS) Identifier is: ```ns```.
+
+A DIDNS Identifier that uses this method **MUST** begin with the following prefix: ```did:ns```. 
 Per the DID Decentralized Identifier specification[2], the value of this string **MUST** be in lowercase.
 
-## 3. "Web7" Decentralized Identifier Format
+## 3. DIDNS Identifier Format
 
-"Web7" Decentralized Identifiers **MUST** use the following format:
+Compliant DIDNS Identifiers **MUST** use the following format:
 ```
-did-web7-did               = "did:web7:" id-string
-id-string                  = 1* idchar
-idchar                     = 0-9 
-```
-`id-string` is an integer value in the range 0..32767, inclusive.
-
-### Example 1. "Web7" Decentralized Identifiers
-```
-did:web7:0
-did:web7:1
-did:web7:2
-did:web7:3
+NSPREFIX                   = "did"
+NSID                       = "ns"
+did-ns-did                 = NSPREFIX : NSID label
+label                      = *(label-separator label-string)
+label-separator            = ":"
+label-string               = 1*label-chars | label-hidden-prefix 1*label-chars
+label_chars                = ALPHA / DIGIT / "-" / pct-encoded
+pct-encoded                = "%" HEXDIG HEXDIG
+label-hidden-prefix        = "_"
 ```
 
-### 3.1 DID Identifier Query Operators
+| Sample  | Notation |
+| :----:  | -------- |
+| 1 | ```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
+| 2 |   ```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc``` |
+| 3 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) |
+| 4 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_didid```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) |
+
+### DIDNS Identifier Transformation
+
+| Transform Steps    | Example |
+| ------------------ | ------- |
+| 1. DIDNS Notation  | ```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
+| 2. URN Notation    | ```urn:didns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
+| 3. URL Notation    | ```0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory``` |
+
+### 3.1 DIDNS Identifier DID Document CRUD Abstract Interface
 
 This DID Method does not define or support any query operators.
 
 ## 4. CRUD Abstract Interface
  
-The "Web7" library implements CRUD interfaces for controlling the lifecycle of a "Web7" Decentralized Identifier and its associated DID Document that are compliant with this specification.
+A DIDNS Identifier runtime library implements CRUD interfaces for controlling the lifecycle of a DIDNS Identifier and its associated DID Document that are compliant with this specification.
  
 ### 4.1 Create (Register)
 
-To create a "Web7" Decentralized Identifier, a program invokes the `RegIdWithPublicKey` function from a compliant "Web7" runtime library. 
-The interface to register a "Web7" Decentralized Identifier and its associated public key is defined as follows:
+To create a DIDNS Identifier, a program invokes the `RegIdWithPublicKey` function from a compliant DIDNS Identifier runtime library. 
+The interface to register a DIDNS Identifier and its associated public key is defined as follows:
 ```csharp
 public bool RegIdWIthPublicKey(string didobjectid, byte[] publicKey); 
 ```
-The calling program must include two parameters: the string value of the new "Web7" Decentralized Identifier to be registered and 
+The calling program must include two parameters: the string value of the new DIDNS Identifier to be registered and 
 a cryptographic public key to act as the first management key. 
-This function will return `True` if the "Web7" Decentralized Identifier had not been registered previously.
+This function will return `True` if the DIDNS Identifier had not been registered previously.
 
 ### 4.2 Read (Resolve)
 
-"Web7" Decentralized Identifier's associated DID Document can be looked up by invoking the `GetDIDDocument` function from a compliant "Web7" runtime library. 
+DIDNS Identifier's associated DID Document can be looked up by invoking the `GetDIDDocument` function from a compliant  Identifier runtime library. 
 To make sure the result returned by invoking the `GetDIDDocument` function is trustworthy, the client could ask a sufficient number of nodes 
 and compare each node's return value.
 
-The interface for resolving a "Web7" Decentralized Identifier and return its associated DID Document is defined as follows:
+The interface for resolving a DIDNS Identifier and return its associated DID Document is defined as follows:
 ```csharp
 public DIDDocument GetDIDDocument(string didobjectid);
 ```
 A DIDDocument is a JSON object which contains the `verificationMethod`, `authentication` elements of the associated DID Document.
-Every public key in the array of `verificationMethod` can be used to authenticate the "Web7" Controller.
+Every public key in the array of `verificationMethod` can be used to authenticate the DIDNS Identifier Controller.
 
 Note: The list of supported public key signature schemes is listed in [Appendix A](#appendix-a-public-key-algorithm).
 
-### Example 2. "Web7" DID Document
+### Example 3. DIDNS Identifier DID Document
 
 ```json
 {
-    "id": "did:web7:0",
+    "id": "did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914",
     "verificationMethod": [
         {
-            "id": "did:web7:0#key-1",
+            "id": "did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914#key-1",
             "type": "Ed25519VerificationKey2020",
-            "controller": "did:web7:0",
+            "controller": "did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914",
             "publicKeyMultibase": "zEY59y7px76e2yv5FMj9fYcjDsqk8yus6isWtkF69ZrHY"
         }
     ],
-    "authentication": ["did:web7:0#key-1"],
-    "assertionMethod": ["did:web7:0#key-1"],
+    "authentication": ["did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914#key-1"],
+    "assertionMethod": ["did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914#key-1"],
     "service": [{
         "id":"#default",
         "type": "default", 
@@ -138,22 +165,22 @@ Note: The list of supported public key signature schemes is listed in [Appendix 
 
 ### 4.3 Update (Replace)
 
-To update the DID Document associated with a "Web7" Decentralized Identifier, two functions need to be invoked, 
+To update the DID Document associated with a DIDNS Identifier, two functions need to be invoked, 
 ```csharp
 public bool AddKey(string didobjectid, byte[] newPublicKey, byte[] sender);
 ```
 ```csharp
 public bool RemoveKey(string didobjectid, byte[] oldPublicKey, byte[] sender);
 ```
-Note that `sender` param must be a currently-in-use public key of this "Web7" Decentralized Identifier.
+Note that `sender` param must be a currently-in-use public key of this DIDNS Identifier.
 If a public key is removed, then it **cannot** be added again.
 
 ### 4.4 Deactivate (Revoke)
 
-To delete or deactivate a "Web7", it suffices to remove all public keys from its associated 
-DID Document. In this case, there is no public key that can be used to authenticate the "Web7" Controller.
+To delete or deactivate a DIDNS Identifier, it suffices to remove all public keys from its associated 
+DID Document. In this case, there is no public key that can be used to authenticate the DIDNS Identifier Controller.
 
-More importantly, deletion of a "Web7" DID Document means that the associated "Web7" Decentralized Identifier cannot be reactivated again. 
+More importantly, deletion of a DIDNS Identifier DID Document means that the associated DIDNS Identifier cannot be reactivated again. 
 
 ## 5. Implementation Guidance
 
@@ -161,18 +188,32 @@ The content is this section is non-normative.
 
 Caveat: The applicablility of the individual guidance referenced below to a particular application domain needs to be assessed on a case-by-case basis.
 
+### Example 3. DIDNS Identifier DNS Query Example
+
+
+| DNS Operation | Example |
+| ------------- | ------- |
+| DNS Query | ```_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory type=ANY``` |
+| DNS Response | ```_diddoc TXT "{ \"id\" : \"did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914\" }"``` |
+|  | ```_diddoc TXT "{ \"service\" : [ { \"id\" : \"#agent0\" }, { \"type\": \"default\" }, { \"serviceEndpoint\": \"https://agents.example.com/agent0\" } ] }"``` |
+|  | ```_diddoc TXT "{ \"service\" : [ { \"id\" : \"#agent1\" }, { \"type\": \"default\" }, { \"serviceEndpoint\": \"https://agents.example.com/agent1\" } ] }"``` |
+
+![Example 3. DIDNS Identifier DNS Example](images/did-ns-dns-example-1-0-1.png)
+
+![Example 3. DIDNS Identifier DNS Example](images/did-ns-dns-example2-1-0-1.png)
+
 ### Security Considerations
 
-There are no security considerations that are specific to this DID Method Namespace Specification. Security considersations and requirements are the responsiblity of the particular platform Implementor - taking into consideration the types of Business Documents, Business Processes, DIDComm agents, and Application Objects processed by that platform.
+There are no security considerations that are specific to this DID Method Specification. Security considersations and requirements are the responsiblity of the particular platform Implementor - taking into consideration the types of Business Documents, Business Processes, DIDComm agents, and Application Objects processed by that platform.
 
 Implementers need to be aware of the security and performance implications of the underlying tools and technologies 
-used to develop DIDComm agents, services, and libraries that, in turn, leverage the "Web7" Method Namespace Specification; as one example, whether the underlying VDR is configured to support concensus by PoA, PoS, or PoW.
+used to develop DIDComm agents, services, and libraries that, in turn, leverage the DIDNS Identifier Method Specification; as one example, whether the underlying VDR is configured to support concensus by PoA, PoS, or PoW.
 
 Further, Implementers are strongly encouraged to review the Security Considerations section of the DID Implementation Guide: https://w3c.github.io/did-imp-guide/#security-considerations.
 
 In addition, consult the Security Considerations section of the Decentralized Identifiers (DIDs) (DID-CORE) specification: https://www.w3.org/TR/did-core/#security-considerations.
 
-Lastly, the following list of best-in-class DID Method Namespace Specifications should also be consulted:
+Lastly, the following list of best-in-class DID Method Specifications should also be consulted:
 
 - `did:keri`: https://identity.foundation/keri/did_methods/#security-considerations
 - `did:key`: https://w3c-ccg.github.io/did-method-key/#security-and-privacy-considerations
@@ -183,18 +224,18 @@ Lastly, the following list of best-in-class DID Method Namespace Specifications 
 
 ### Privacy Considerations
 
-There are no privacy considerations that are specific to this DID Method Namespace Specification. Privacy considersations and requirements are the responsiblity of the particular platform Implementor - taking into consideration the types of Business Documents, Business Processes, DIDComm agents, and Application Objects processed by that platform.
+There are no privacy considerations that are specific to this DID Method Specification. Privacy considersations and requirements are the responsiblity of the particular platform Implementor - taking into consideration the types of Business Documents, Business Processes, DIDComm agents, and Application Objects processed by that platform.
 
-The syntax and construction of a "Web7" Decentralized Identifier and its associated DID Document helps to ensure that no Personally Identifiable Information (PII) or other personal data is exposed by these constructs.
+The syntax and construction of a DIDNS Identifier and its associated DID Document helps to ensure that no Personally Identifiable Information (PII) or other personal data is exposed by these constructs.
 
 Implementers need to be aware of the privacy implications of the underlying tools and technologies 
-used to develop DIDComm agents, services, and libraries that in turn, leverage the "Web7" Method Namespace Specification. 
+used to develop DIDComm agents, services, and libraries that in turn, leverage the DIDNS Identifier Method Specification. 
 
 Further, Implementers are strongly encouraged to review the Privacy Considerations section of the DID Implementation Guide: https://w3c.github.io/did-imp-guide/#privacy-considerations.
 
 In addition, consult the Privacy Considerations section of the Decentralized Identifiers (DIDs) (DID-CORE) specification: https://www.w3.org/TR/did-core/#privacy-considerations.
 
-Lastly, the following list of best-in-class DID Method Namespace Specifications should also be consulted:
+Lastly, the following list of best-in-class DID Method Specifications should also be consulted:
 
 - `did:keri`: https://identity.foundation/keri/did_methods/#privacy-considerations
 - `did:key`: https://w3c-ccg.github.io/did-method-key/#security-and-privacy-considerations
@@ -205,8 +246,8 @@ Lastly, the following list of best-in-class DID Method Namespace Specifications 
 
 ## 6. Reference Implementations
 
-A version of the code for the "Web7" Decentralized Identifier Method reference implementation can be found in the following GitHub project: https://github.com/Web7Foundation/DnsServer. 
-This project is the definitive reference implementation of the "Web7" Decentralized Identifier Method and contains compliant reference implementations of 
+A version of the code for the Decentralized Identifier Name System (DIDNS) reference implementation can be found in the following GitHub project: https://github.com/Web7Foundation/DnsServer. 
+This project is the definitive reference implementation of the Decentralized Identifier Name System (DIDNS) and contains compliant reference implementations of 
 Web 7.0 apps, DIDComm agents, and services.
 
 ## 7. Acknowledgments
@@ -333,6 +374,34 @@ References and historical record of related publications.
 [43] Trinity Graph Engine GitHub repository, https://github.com/Microsoft/GraphEngine.
 
 [44] Object Linking and Embedding (OLE), https://en.wikipedia.org/wiki/Object_Linking_and_Embedding.
+
+[45] [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+              Requirement Levels", BCP 14, RFC 2119,
+              DOI 10.17487/RFC2119, March 1997,
+              <http://www.rfc-editor.org/info/rfc2119>.
+
+[46] [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
+              Resource Identifier (URI): Generic Syntax", STD 66,
+              RFC 3986, DOI 10.17487/RFC3986, January 2005,
+              <http://www.rfc-editor.org/info/rfc3986>.
+
+[47] [RFC5234]  Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
+              Specifications: ABNF", STD 68, RFC 5234,
+              DOI 10.17487/RFC5234, January 2008,
+              <http://www.rfc-editor.org/info/rfc5234>.
+
+[48] [RFC1034]  P. Mockapetris, "Domain Names - Concepts and Facilities", RFC 1034,
+              DOI 10.17487/RFC1034, November 1987,
+              <http://www.rfc-editor.org/info/rfc1034>.
+
+[49] [RFC1035]  Peter Saint-Andre and John C. Klensin, "Uniform Resource Names (URNs)", RFC 8141,
+              DOI 10.17487/RFC8141, April 2017,
+              <http://www.rfc-editor.org/info/rfc8141>.
+
+## Copyright
+
+Copyright &copy; 2024 Michael Herman (Alberta, Canada) – Creative Commons Attribution-ShareAlike 4.0 International Public License
+https://creativecommons.org/licenses/by-sa/4.0/legalcode
 
 ## Epilogue
 

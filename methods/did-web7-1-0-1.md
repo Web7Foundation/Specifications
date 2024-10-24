@@ -1,4 +1,4 @@
-# Web 7.0 Ultraweb Decentralized Identifier Method Namespace Specification version 1.0.1
+# Web 7.0 Ultraweb Decentralized Identifier Name Sysytem (DIDNS) Method Namespace Specification version 1.0.1
 
 ## 1. Context
 

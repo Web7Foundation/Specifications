@@ -1,4 +1,4 @@
-# Web 7.0 Ultraweb Decentralized Identifier Name Sysytem (DIDNS) Method Namespace Specification version 1.0.1
+# Web 7.0 Ultraweb Decentralized Identifier Method Namespace Specification version 1.0.1
 
 ## 1. Context
 
@@ -10,7 +10,7 @@ The purpose of a Decentralized Identifier (DID) Method Namespace Specification i
 - DID Document CRUD Abstract Interface(s)
 - DID Method Platform Implementation Guidance
 
-The Web 7.0 Decentralized Identifier Method Namespace Specification ("Web7" DID Method Namespace Specification) 
+The Web 7.0 Decentralized Identifier Method Namespace Specification ("Web7") DID Method Namespace Specification) 
 defines the end-to-end lifecycle of DID Identifiers and DID Documents for use in the Web 7.0 Ultraweb ecosystem.
 
 Web 7.0 is a secure, message-based, decentralized operating system that underpins a unified software and hardware ecosystem for building resilient, trusted, decentralized systems using decentralized identifiers, DIDComm agents, and verifiable credentials.

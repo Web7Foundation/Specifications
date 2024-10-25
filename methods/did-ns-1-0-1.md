@@ -1,6 +1,6 @@
 # Web 7.0 Ultraweb Decentralized Identifier Name System (DIDNS) DID Method Specification version 1.0.1
 
-Web 7.0 DIDNS Sample Query (live): 
+Web 7.0 Ultraweb DIDNS Sample Query (live): 
 
 https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/
 
@@ -14,7 +14,7 @@ The purpose of a DID Method Specification is to define the following:
 - DID Document CRUD Abstract Interface(s)
 - DID Method Platform Implementation Guidance
 
-The Web 7.0 Decentralized Identifier Name System (DIDNS) DID Method Specification (DIDNS DID Method Specification) 
+The Web 7.0 Ultraweb Decentralized Identifier Name System (DIDNS) DID Method Specification (Web 7.0 DIDNS DID Method Specification) 
 defines the end-to-end lifecycle of DID Identifiers and DID Documents for use in the Web 7.0 Ultraweb ecosystem.
 
 Web 7.0 is a secure, message-based, decentralized operating system that underpins a unified software and hardware ecosystem for building resilient, trusted, decentralized systems using decentralized identifiers, DIDComm agents, and verifiable credentials.

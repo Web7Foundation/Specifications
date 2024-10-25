@@ -1,6 +1,9 @@
 # Web 7.0 Ultraweb Decentralized Identifier Name System (DIDNS) DID Method Specification version 1.0.1
 
-Web 7.0 DIDNS Sample Query (live): https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/
+Web 7.0 DIDNS Sample Query (live): 
+```http
+https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/
+```
 
 ## 1. Context
 

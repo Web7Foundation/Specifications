@@ -101,7 +101,7 @@ label-hidden-prefix        = "_"
 | 3 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/TXT/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) |
 | 4 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_didid```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/TXT/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/TXT/UDP/false/) |
 
-### DIDNS Identifier Transformation
+### 3.1 DIDNS Identifier Transformation
 
 | Transform Steps    | Example |
 | ------------------ | ------- |
@@ -109,7 +109,7 @@ label-hidden-prefix        = "_"
 | 2. URN Notation    | ```urn:didns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
 | 3. URL Notation    | ```0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory``` |
 
-### 3.1 DIDNS Identifier DID Document CRUD Abstract Interface
+### 3.2 DIDNS Identifier DID Document CRUD Abstract Interface
 
 This DID Method does not define or support any query operators.
 

@@ -19,7 +19,7 @@ defines the end-to-end lifecycle of DID Identifiers and DID Documents for use in
 
 Web 7.0 is a secure, message-based, decentralized operating system that underpins a unified software and hardware ecosystem for building resilient, trusted, decentralized systems using decentralized identifiers, DIDComm agents, and verifiable credentials.
 
-The Web 7.0 Foundation, a federally-incorporated Canadian non-profit organization, is chartered to support, promote, protect, and curate the Web 7.0 ecosystem: operating system software, standards, and specifications; as well as other software and technology projects. The Web 7.0 project is an offspring of the Trusted Digital Web (TDW) project (http://gethub.com/mwherman2000/TrustedDigitalWeb).
+The Web 7.0 Foundation, a federally-incorporated Canadian non-profit organization, is chartered to support, promote, protect, and curate the Web 7.0 ecosystem: operating system software, standards, and specifications; as well as other software and technology projects. The Web 7.0 project is an offspring of the Trusted Digital Web (TDW) project (http://github.com/mwherman2000/TrustedDigitalWeb).
 
 This specification defines the following:
 - DIDNS Identifier Syntax and Construction

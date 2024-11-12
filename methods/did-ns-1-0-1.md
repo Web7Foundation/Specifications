@@ -54,7 +54,7 @@ published by the W3C Decentralized Identifier Working Group.
 
 ### Variations
 
-Three (3) variations of the did:ns Method are currently supported.
+Three (3) variations of the did:ns DID method are currently supported.
 
 - DID Name System over DNS (DIDNS/DNS) (reference implementation)
 - DID Name System over Microsoft Active Directory/Azure Directory Services (DIDNS/AD)

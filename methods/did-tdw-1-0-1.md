@@ -50,6 +50,16 @@ This specification conforms to the requirements specified in the
 Decentralized Identifiers (DIDs) v1.0 W3C Proposed Recommendation[2] 
 published by the W3C Decentralized Identifier Working Group. 
 
+### Variations
+
+Three (3) variations of the did:ns DID method are currently supported.
+
+- TDW DID Name System over DNS (TDWNS/DNS) (reference implementation)
+- TDW DID Name System over Microsoft Active Directory/Azure Directory Services (TDWNS/AD)
+- TDW DID Name System over X.500/LDAP (TDWNS/LDAP)
+
+This specification describes the design of the DIDNS/DNS reference implementation.
+
 ### Authoritative Source Text
 
 The authoriative source text for this specification can be found here: https://github.com/Web7Foundation/Specifications/blob/main/methods/did-tdw-1-0-1.md.

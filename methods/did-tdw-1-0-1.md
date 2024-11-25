@@ -72,7 +72,7 @@ did:tdw:fe042e80-e963-4a35-9734-7d1eaeb1b06e:_didkey
 
 ## 2. Decentralized Identifier Name System (TDWNS) Name
 
-The name string that **MUST** be used o label a TDW Decentralized Identifier Name System (TDWNS) Identifier is: ```tdw```.
+The name string that **MUST** be used to label a TDW Decentralized Identifier Name System (TDWNS) Identifier is: ```tdw```.
 
 A TDWNS Identifier that uses this method **MUST** begin with the following prefix: ```did:tdw```. 
 Per the DID Decentralized Identifier specification[2], the value of this string **MUST** be in lowercase.

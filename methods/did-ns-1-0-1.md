@@ -84,7 +84,7 @@ did:ns:fe042e80-e963-4a35-9734-7d1eaeb1b06e:_didkey
 
 ## 2. Decentralized Identifier Name System (DIDNS) Name
 
-The name string that **MUST** be used o label a Decentralized Identifier Name System (DIDNS) Identifier is: ```ns```.
+The name string that **MUST** be used to label a Decentralized Identifier Name System (DIDNS) Identifier is: ```ns```.
 
 A DIDNS Identifier that uses this method **MUST** begin with the following prefix: ```did:ns```. 
 Per the DID Decentralized Identifier specification[2], the value of this string **MUST** be in lowercase.

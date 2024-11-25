@@ -2,7 +2,7 @@
 
 Web 7.0 Ultraweb DIDNS Sample Query (live): 
 
-https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/
+https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/TXT/UDP/false/
 
 ## 1. Context
 
@@ -19,7 +19,7 @@ defines the end-to-end lifecycle of DID Identifiers and DID Documents for use in
 
 Web 7.0 is a secure, message-based, decentralized operating system that underpins a unified software and hardware ecosystem for building resilient, trusted, decentralized systems using decentralized identifiers, DIDComm agents, and verifiable credentials.
 
-The Web 7.0 Foundation, a federally-incorporated Canadian non-profit organization, is chartered to support, promote, protect, and curate the Web 7.0 ecosystem: operating system software, standards, and specifications; as well as other software and technology projects.
+The Web 7.0 Foundation, a federally-incorporated Canadian non-profit organization, is chartered to support, promote, protect, and curate the Web 7.0 ecosystem: operating system software, standards, and specifications; as well as other software and technology projects. The Web 7.0 project is an offspring of the Trusted Digital Web (TDW) project (http://github.com/mwherman2000/TrustedDigitalWeb).
 
 This specification defines the following:
 - DIDNS Identifier Syntax and Construction
@@ -51,6 +51,16 @@ verifiable credentials, and secure storage may also be interested in reading thi
 This specification conforms to the requirements specified in the 
 Decentralized Identifiers (DIDs) v1.0 W3C Proposed Recommendation[2] 
 published by the W3C Decentralized Identifier Working Group. 
+
+### Variations
+
+Three (3) variations of the did:ns DID method are currently supported.
+
+- DID Name System over DNS (DIDNS/DNS) (reference implementation)
+- DID Name System over Microsoft Active Directory/Azure Directory Services (DIDNS/AD)
+- DID Name System over X.500/LDAP (DIDNS/LDAP)
+
+This specification describes the design of the DIDNS/DNS reference implementation.
 
 ### Authoritative Source Text
 
@@ -98,10 +108,10 @@ label-hidden-prefix        = "_"
 | :----:  | -------- |
 | 1 | ```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
 | 2 |   ```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc``` |
-| 3 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) |
-| 4 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_didid```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) |
+| 3 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/TXT/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/ANY/UDP/false/) |
+| 4 (live) | [```did:ns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_didid```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/TXT/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory/TXT/UDP/false/) |
 
-### DIDNS Identifier Transformation
+### 3.1 DIDNS Identifier Transformation
 
 | Transform Steps    | Example |
 | ------------------ | ------- |
@@ -109,7 +119,7 @@ label-hidden-prefix        = "_"
 | 2. URN Notation    | ```urn:didns:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
 | 3. URL Notation    | ```0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.didns.directory``` |
 
-### 3.1 DIDNS Identifier DID Document CRUD Abstract Interface
+### 3.2 DIDNS Identifier DID Document CRUD Abstract Interface
 
 This DID Method does not define or support any query operators.
 

@@ -70,7 +70,7 @@ did:tdw:fe042e80-e963-4a35-9734-7d1eaeb1b06e:_didid
 did:tdw:fe042e80-e963-4a35-9734-7d1eaeb1b06e:_didkey
 ```
 
-## 2. Decentralized Identifier Name System (TDWNS) Name
+## 2. TDW Decentralized Identifier Name System (TDWNS) Name
 
 The name string that **MUST** be used to label a TDW Decentralized Identifier Name System (TDWNS) Identifier is: ```tdw```.
 
@@ -92,6 +92,8 @@ pct-encoded                = "%" HEXDIG HEXDIG
 label-hidden-prefix        = "_"
 ```
 
+### 3.1 TDWNS Identifier Samples
+
 | Sample  | Notation |
 | :----:  | -------- |
 | 1 | ```did:tdw:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
@@ -99,7 +101,7 @@ label-hidden-prefix        = "_"
 | 3 (not live) | [```did:tdw:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_diddoc```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.did-tdw.directory/ANY/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_diddoc.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.did-tdw.directory/ANY/UDP/false/) |
 | 4 (not live) | [```did:tdw:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914:_didid```](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.did-tdw.directory/ANY/UDP/false/) [(click)](https://dnsclient.net/#Google%20%7B8.8.8.8%7D/_didid.0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.did-tdw.directory/ANY/UDP/false/) |
 
-### TDWNS Identifier Transformation
+### 3.2 TDWNS Identifier Transformation
 
 | Transform Steps    | Example |
 | ------------------ | ------- |
@@ -107,7 +109,7 @@ label-hidden-prefix        = "_"
 | 2. URN Notation    | ```urn:did-tdw:com:example:users:0e12c4ff-227b-4642-b37f-f1eff9d44914``` |
 | 3. URL Notation    | ```0e12c4ff-227b-4642-b37f-f1eff9d44914.users.example.com.did-tdw.directory``` |
 
-### 3.1 TDWNS Identifier DID Document CRUD Abstract Interface
+### 3.3 TDWNS Identifier DID Document CRUD Abstract Interface
 
 This DID Method does not define or support any query operators.
 

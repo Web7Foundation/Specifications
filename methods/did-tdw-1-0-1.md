@@ -200,9 +200,9 @@ Caveat: The applicablility of the individual guidance referenced below to a part
 |  | ```_diddoc TXT "{ \"service\" : [ { \"id\" : \"#agent0\" }, { \"type\": \"default\" }, { \"serviceEndpoint\": \"https://agents.example.com/agent0\" } ] }"``` |
 |  | ```_diddoc TXT "{ \"service\" : [ { \"id\" : \"#agent1\" }, { \"type\": \"default\" }, { \"serviceEndpoint\": \"https://agents.example.com/agent1\" } ] }"``` |
 
-![Example 3. TDWNS Identifier DNS Example](images/did-tdw-dns-example-1-0-1.png)
+![Example 3. TDWNS Identifier DNS Example](images/did-ns-dns-example-1-0-1.png)
 
-![Example 3. TDWNS Identifier DNS Example](images/did-tdw-dns-example2-1-0-1.png)
+![Example 3. TDWNS Identifier DNS Example](images/did-ns-dns-example2-1-0-1.png)
 
 ### Security Considerations
 

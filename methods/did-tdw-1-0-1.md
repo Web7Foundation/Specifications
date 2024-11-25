@@ -1,4 +1,4 @@
-# Trusted Digital Web Decentralized Identifier Name System (TDWNS) DID Method Specification version 1.0.1
+# Trusted Digital Web (TDW) Decentralized Identifier Name System (TDWNS) DID Method Specification version 1.0.1
 
 ## 1. Context
 
@@ -10,8 +10,10 @@ The purpose of a DID Method Specification is to define the following:
 - DID Document CRUD Abstract Interface(s)
 - DID Method Platform Implementation Guidance
 
-The Trusted Digital Web Decentralized Identifier Name System (TDWNS) DID Method Specification (Web 7.0 TDWNS DID Method Specification) 
+The Trusted Digital Web (TDW) Decentralized Identifier Name System (TDWNS) DID Method Specification (TDWNS DID Method Specification) 
 defines the end-to-end lifecycle of DID Identifiers and DID Documents for use in the Trusted Digital Web ecosystem.
+
+The Trusted Digital Web (TDW) runs on top of Web 7.0.
 
 Web 7.0 is a secure, message-based, decentralized operating system that underpins a unified software and hardware ecosystem for building resilient, trusted, decentralized systems using decentralized identifiers, DIDComm agents, and verifiable credentials.
 
@@ -21,7 +23,7 @@ This specification defines the following:
 - TDWNS Identifier Syntax and Construction
 - TDWNS Identifier DID Document CRUD Abstract Interface
 
-This specification also provides Platform Implementation Guidance to assist Implementors in creating safe and secure Web 7.0 apps, agents, services and platforms that are compliant with the TDWNS DID Method Specification.
+This specification also provides Platform Implementation Guidance to assist Implementors in creating safe and secure TDW apps, agents, services and platforms that are compliant with the TDWNS DID Method Specification.
 
 ### Out-of-Scope
 
@@ -30,7 +32,7 @@ The following topics are out-of-scope:
 
 ### Intended Audience
 
-The primary audience for this DID Method Specification is Implementors of Web 7.0 apps, DIDComm agents, and services; including but not limited to: 
+The primary audience for this DID Method Specification is Implementors of TDW apps, DIDComm agents, and services; including but not limited to: 
 software architects, data modelers, application developers, services developers, testers, operators, and user experience (UX) specialists. 
 In addition, other people involved in a broad range of standards efforts related to decentralized identity,
 verifiable credentials, and secure storage may also be interested in reading this specification.
@@ -248,7 +250,7 @@ Lastly, the following list of best-in-class DID Method Specifications should als
 
 A version of the code for the Decentralized Identifier Name System (TDWNS) reference implementation can be found in the following GitHub project: https://github.com/Web7Foundation/DnsServer. 
 This project is the definitive reference implementation of the Decentralized Identifier Name System (TDWNS) and contains compliant reference implementations of 
-Web 7.0 apps, DIDComm agents, and services.
+TDW apps, DIDComm agents, and services.
 
 ## 7. Acknowledgments
 
@@ -285,7 +287,7 @@ There is only one curve that can be used, namely, `ed25519`.
 
 References and historical record of related publications.
 
-[0] Web 7.0 DIDComm Agent Architecture Reference Model (DIDComm-ARM) 0.40 (December 18, 2022), https://hyperonomy.com/2022/12/18/web-7-0-didcomm-agent-architecture-reference-model-didcomm-arm-0-40-december-18-2022/.
+[0] TDW DIDComm Agent Architecture Reference Model (DIDComm-ARM) 0.40 (December 18, 2022), https://hyperonomy.com/2022/12/18/web-7-0-didcomm-agent-architecture-reference-model-didcomm-arm-0-40-december-18-2022/.
 
 [1] Trusted Digital Web: Whitepaper, https://hyperonomy.com/2019/11/06/trusted-digital-web-whitepaper/.
 
